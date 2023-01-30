@@ -1,0 +1,9 @@
+#Use official Alpine docker image
+FROM alpine
+LABEL pace=true
+WORKDIR /
+ADD run.sh /run.sh
+RUN apk update && apk add git make openjdk11 procps && \
+    git clone https://github.com/TCS-Meiji/PACE2017-TrackA.git && \
+    javac PACE2017-TrackA/tw/exact/*.java && \
+    chmod +x run.sh

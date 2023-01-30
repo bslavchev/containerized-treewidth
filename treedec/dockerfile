@@ -1,0 +1,13 @@
+#Use official Alpine docker image
+FROM alpine
+LABEL pace=true
+WORKDIR /
+ADD run.sh /run.sh
+RUN apk update && apk add --no-cache python3 py3-pip python3-dev procps \
+        build-base git make boost-dev automake autoconf libtool && \
+    pip install Cython
+RUN git clone https://github.com/freetdi/tdlib && \
+    git clone https://github.com/freetdi/gala
+RUN (cd gala && ./configure && make install) && \
+    (cd tdlib && ./bootstrap && ./configure && make && make install) && \
+    chmod +x run.sh

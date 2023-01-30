@@ -1,0 +1,9 @@
+#Use official Alpine docker image
+FROM alpine
+LABEL pace=true
+WORKDIR /
+ADD run.sh /run.sh
+RUN apk update && apk add git make openjdk11 procps && \
+    git clone https://github.com/maxbannach/Jdrasil.git
+RUN (cd Jdrasil && sh gradlew assemble) && \
+    chmod +x run.sh
