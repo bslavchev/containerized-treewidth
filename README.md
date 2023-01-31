@@ -4,8 +4,8 @@ This repository contains scripts to build **(unofficial)** Docker images of the 
 
 ## Implemented solvers and solver entrypoints:
 * [treedec](https://gitlab.com/freetdi/treedec) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_treedec)): --ex17
-* [Meiji](https://github.com/TCS-Meiji/PACE2017-TrackA) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_meiji)) (Tamaki, H., 2019): tw-exact
-* [Jdrasil](https://github.com/maxbannach/Jdrasil) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_jdrasil)) (Bannach et al., 2017): jdrasil.Exact
+* [meiji](https://github.com/TCS-Meiji/PACE2017-TrackA) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_meiji)) (Tamaki, H., 2019): tw-exact
+* [jdrasil](https://github.com/maxbannach/Jdrasil) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_jdrasil)) (Bannach et al., 2017): jdrasil.Exact
 * [twalgor](https://github.com/twalgor/tw) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_twalgor)) (Tamaki, 2022): twalgor.main.ExactTW
 
 ## Usage
@@ -16,7 +16,7 @@ In order to use a solver without building the image yourself, use the `docker pu
 To execute a solver:
 ```docker run -it --rm -v $PWD:/data containerizepace/[SOLVER] sh run.sh [IN] [TIMEOUT] [OUT]```
 
-* `[SOLVER]` is one of the solvers from the below list
+* `[SOLVER]` is one of the solvers from the above list
 * `[IN]` is the relative path to the [PACE .gr file](https://github.com/PACE-challenge/Treewidth#input-format) that represents the graph you want the solver to run on 
 * `[TIMEOUT]` is the number of seconds the solver is allowed to run before terminating
 * `[OUT]` is the relative path to the [PACE-formatted](https://github.com/PACE-challenge/Treewidth#output-format) desired output (default file extension `.td`)
