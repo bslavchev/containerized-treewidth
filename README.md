@@ -9,7 +9,7 @@ This repository contains scripts to build **(unofficial)** Docker images of the 
 * [twalgor](https://github.com/twalgor/tw) ([DockerHub image](https://hub.docker.com/r/containerizepace/treewidth_twalgor)) (Tamaki, 2022): twalgor.main.ExactTW
 
 ## Usage
-[Docker](https://www.docker.com/) is a prerequisite to both build and execute any of the solvers. In order to build a solver, execute the `build.sh` script in the respective folder using a UNIX shell.
+[Docker](https://www.docker.com/) is a prerequisite to both build and execute any of the solvers. In order to build a solver (which is not necessary, see next sentence), execute the `build.sh` script in the respective folder using a UNIX shell.
 
 In order to use a solver without building the image yourself, use the `docker pull` command listed on the image's DockerHub page.
 
